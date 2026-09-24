@@ -1,4 +1,5 @@
 @abstract
+@tool
 @icon( "uid://co7j8ckrp6x72" )
 extends Node;
 class_name State;
@@ -12,6 +13,12 @@ signal state_change_requested( state: StringName );
 ## Used to tell the parent [GDStateMachine] to change states.
 func emit_state_change_request( state: StringName ) -> void:
 	state_change_requested.emit( state );
+
+
+func _ready() -> void:
+	if ( Engine.is_editor_hint() ):
+		XVIFuncs.set_node_processes( self, false );
+		return;
 
 
 ## Virtual function for when this state is entered
