@@ -16,12 +16,7 @@ const TEXT_FORMAT := "FPS: %s";
 
 func _ready() -> void:
 	
-	if ( Engine.is_editor_hint() ):
-		
-		text = TEXT_FORMAT;
-		set_process( false );
-		set_physics_process( false );
-		return;
+	visibility_changed.connect( _on_visibility_changed, CONNECT_DEFERRED );
 
 func _validate_property( property: Dictionary ) -> void:
 	if ( property[ "name" ] == "text" ):
@@ -34,3 +29,10 @@ func _process( _delta: float ) -> void:
 func _physics_process( _delta: float ) -> void:
 	if ( _on_physics ):
 		text = TEXT_FORMAT % Engine.get_frames_per_second();
+
+
+func _on_visibility_changed() -> void:
+	
+	var vis := is_visible_in_tree();
+	set_process( vis );
+	set_physics_process( vis );
