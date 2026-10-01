@@ -1,0 +1,5 @@
+In game cursor will ALWAYS lag behind by 1 frame.
+Full mouse cursor functionality is supported by simply warping the mouse.
+
+It is more than possible to have the godot focus system working seperatley from the cursor,
+in fact it already does.

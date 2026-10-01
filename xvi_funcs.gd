@@ -19,6 +19,13 @@ static func set_node_processes( node: Node, enabled: bool = false ) -> void:
 	node.set_process_unhandled_input( enabled );
 	node.set_process_unhandled_key_input( enabled );
 
+## When provided a focusable [Control], this makes that [Control] grabs focus and warps the mouse
+## to its center.
+static func control_focus_and_snap( control: Control ) -> void:
+	
+	control.grab_focus();
+	Input.warp_mouse( control.get_rect().get_center() );
+
 ## A neat wrapper for the threading functions in [ResourceLoader].
 ## A standardized way to load a resource on a thread using await.
 ##
@@ -42,6 +49,8 @@ static func load_resource_coroutine( resource_path: String, type_hint: String = 
 	
 	return ResourceLoader.load_threaded_get( resource_path );
 
+#region Math
+
 ## Converts a bpm value into a period of time measured in seconds.[br]
 ## Example: 120 bpm == 0.5 seconds
 static func bpm_to_sec( bpm: float ) -> float:
@@ -50,3 +59,5 @@ static func bpm_to_sec( bpm: float ) -> float:
 ## Does what bpm_to_sec does, but backwards.
 static func sec_to_bpm( sec: float ) -> float:
 	return 60.0 / sec;
+
+#endregion Math

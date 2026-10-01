@@ -1,6 +1,6 @@
 @tool
 extends Control;
-class_name GamepadCorsor;
+class_name TestGamepadCorsor;
 
 
 var _is_mouse_mode := false;
@@ -13,7 +13,7 @@ func _ready() -> void:
 		XVIFuncs.set_node_processes( self, false );
 		return;
 	
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN;
+	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN;
 
 func _process( delta: float ) -> void:
 	
