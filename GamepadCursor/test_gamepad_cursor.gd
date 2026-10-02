@@ -13,6 +13,8 @@ func _ready() -> void:
 		XVIFuncs.set_node_processes( self, false );
 		return;
 	
+	#get_tree().root.gui_focus_changed
+	
 	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN;
 
 func _process( delta: float ) -> void:
