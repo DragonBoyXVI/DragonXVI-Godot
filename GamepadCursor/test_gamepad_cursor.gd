@@ -1,6 +1,6 @@
 @tool
 extends Control;
-class_name TestGamepadCorsor;
+class_name TestGamepadCursor;
 
 
 var _is_mouse_mode := false;
