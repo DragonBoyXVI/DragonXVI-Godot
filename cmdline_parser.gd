@@ -11,6 +11,8 @@ class_name CmdlineParser;
 
 ## Unlocks developer features.
 const DEV_MODE := "--dev";
+## Provided by godot when booting the editor.
+const EDITOR := "--editor";
 
 
 static var _cmd_args: Dictionary[ String, String ] = {};
