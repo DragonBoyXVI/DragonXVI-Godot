@@ -136,3 +136,15 @@ static func fill_resource_from_json( resource: Resource, json_string: String ) -
 	return resource;
 
 #endregion JSON
+
+#region Strings
+
+## Taken from the Godot documentation.[br]
+## Takes a string with bbcode and completely strips it from the returned string.
+## This does prevent the use of brackets however.
+static func strip_bbcode( source: String ) -> String:
+	
+	var regex := RegEx.create_from_string( "\\[.+?\\]" );
+	return regex.sub( source, "", true );
+
+#endregion Strings
