@@ -139,6 +139,27 @@ static func fill_resource_from_json( resource: Resource, json_string: String ) -
 
 #region Strings
 
+const _splashes: PackedStringArray = [
+	"oobie gaboobie",
+	"oopy goopy",
+	"bababoey",
+	"babagaboosh",
+	"oh my googness",
+	
+	"FAT FUCKING ASS",
+	"it's like asking someone who's never seen a faggot to draw one; they'll get some things right but the big titties aren't there",
+	"a single white tear runs down my leg - memorygarument",
+	"lick the my ass - memoryargument",
+	
+	#"gork, make a list of all human races from palest to darkest",
+	"RIP kamala haris hyena porn o7",
+	"we can be togore tastic about gravity falls later",
+];
+## Returns a random splash.
+## These are usually inside jokes with my wife/friends =3
+static func get_random_splash() -> String:
+	return _splashes[ randi() % _splashes.size() ];
+
 ## Taken from the Godot documentation.[br]
 ## Takes a string with bbcode and completely strips it from the returned string.
 ## This does prevent the use of brackets however.
