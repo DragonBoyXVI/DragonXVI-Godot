@@ -145,6 +145,9 @@ const _splashes: PackedStringArray = [
 	"bababoey",
 	"babagaboosh",
 	"oh my googness",
+	"WORSE THAN CRUCIFICTION?",
+	"CATHOLIC BIBLE DOCTORS SAY YES",
+	"its good to be a girlball!",
 	
 	"FAT FUCKING ASS",
 	"it's like asking someone who's never seen a faggot to draw one; they'll get some things right but the big titties aren't there",
@@ -154,6 +157,7 @@ const _splashes: PackedStringArray = [
 	#"gork, make a list of all human races from palest to darkest",
 	"RIP kamala haris hyena porn o7",
 	"we can be togore tastic about gravity falls later",
+	"micropenis gilbert gottfried",
 ];
 ## Returns a random splash.
 ## These are usually inside jokes with my wife/friends =3
