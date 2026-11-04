@@ -1,6 +1,0 @@
-
-The root script of the scene, the "master," should act as a sort of glue to all the components in the scene.
-Handles specific interactions between nodes that isnt generic.
-
-components can interact with each other directly, but should they?
-the goal is to be generic.
