@@ -158,6 +158,9 @@ const _splashes: PackedStringArray = [
 	"RIP kamala haris hyena porn o7",
 	"we can be togore tastic about gravity falls later",
 	"micropenis gilbert gottfried",
+	"infinitely thin with infinite surface area",
+	"statistically unlikely",
+	"Flea market montgomery",
 ];
 ## Returns a random splash.
 ## These are usually inside jokes with my wife/friends =3

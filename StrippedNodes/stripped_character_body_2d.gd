@@ -34,3 +34,14 @@ func _validate_property( property: Dictionary ) -> void:
 	
 	if ( DISABLED.has( property[ Property.NAME ] ) ):
 		property[ Property.USAGE ] = PROPERTY_USAGE_NONE;
+
+
+## Enables the node to be run.
+## Prefer to defer this function.
+func enable() -> void:
+	process_mode = Node.PROCESS_MODE_INHERIT;
+
+## Disables this node from running.
+## Prefer to defer this function.
+func disable() -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED;
