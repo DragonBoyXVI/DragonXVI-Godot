@@ -13,6 +13,11 @@ class_name CmdlineParser;
 const DEV_MODE := "--dev";
 ## Provided by godot when booting the editor.
 const EDITOR := "--editor";
+## Godot FPS argument.
+## If your game never modifies the max FPS than you dont need to touch this, but if it does
+## you might want to check this to handle it yourself.
+## A value of 0 is uncapped.
+const FPS := "--max-fps";
 
 
 static var _cmd_args: Dictionary[ String, String ] = {};
