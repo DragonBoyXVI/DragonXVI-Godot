@@ -34,7 +34,6 @@ var _real_start_time: int = 0;
 var _game_time: float = 0.0;
 
 var _laps: Array[ StopWatchLap ] = [];
-var _master_lap: StopWatchLap;
 
 
 func _process( delta: float ) -> void:
@@ -54,7 +53,6 @@ func start() -> void:
 	_game_time = 0.0;
 	
 	_laps = [];
-	_master_lap = StopWatchLap.new();
 
 ## Stop tracking time.
 ## This creates a lap.

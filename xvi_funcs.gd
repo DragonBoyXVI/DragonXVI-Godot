@@ -8,26 +8,6 @@ class_name XVIFuncs;
 ## Makes it easier to migrate new utils to this class and push those to other projects.
 
 
-## Sets ALL node processes to enabled or disabled, dependig on whats given to
-## the "enabled" argument.
-## By default, this will disable all processes.
-static func set_node_processes( node: Node, enabled: bool = false ) -> void:
-	
-	node.set_process( enabled );
-	node.set_physics_process( enabled );
-	node.set_process_input( enabled );
-	node.set_process_shortcut_input( enabled );
-	node.set_process_unhandled_input( enabled );
-	node.set_process_unhandled_key_input( enabled );
-
-## When provided a focusable [Control], this makes that [Control] grabs focus and warps the mouse
-## to its center.
-static func control_focus_and_snap( control: Control ) -> void:
-	assert( control.get_focus_mode_with_override() != Control.FOCUS_NONE, ">={" );
-	
-	control.grab_focus();
-	Input.warp_mouse( control.get_rect().get_center() );
-
 ## A neat wrapper for the threading functions in [ResourceLoader].
 ## A standardized way to load a resource on a thread using await.[br]
 ## NOTE: eh.[br]
@@ -52,6 +32,51 @@ static func load_resource_coroutine( resource_path: String, type_hint: String = 
 			return null;
 	
 	return ResourceLoader.load_threaded_get( resource_path );
+
+## Shorthand for my method of disabling properties.[br]
+## [br]
+## disable_list: [PackedStringArray] - List of properties you want disabled.[br]
+## property: [Dictionary] - The current property being checked.[br]
+static func property_disable_by_list( disable_list: PackedStringArray, property: Dictionary ) -> void:
+	if ( property[ Property.NAME ] in disable_list ):
+		property[ Property.USAGE ] = PROPERTY_USAGE_NONE;
+
+#region Node Processing
+
+## Sets ALL node processes to enabled or disabled, dependig on whats given to
+## the "enabled" argument.
+## By default, this will disable all processes.
+static func set_node_processes( node: Node, enabled: bool = false ) -> void:
+	
+	node.set_process( enabled );
+	node.set_physics_process( enabled );
+	node.set_process_input( enabled );
+	node.set_process_shortcut_input( enabled );
+	node.set_process_unhandled_input( enabled );
+	node.set_process_unhandled_key_input( enabled );
+
+## When provided a focusable [Control], this makes that [Control] grabs focus and warps the mouse
+## to its center.
+static func control_focus_and_snap( control: Control ) -> void:
+	assert( control.get_focus_mode_with_override() != Control.FOCUS_NONE, ">={" );
+	
+	control.grab_focus();
+	Input.warp_mouse( control.get_rect().get_center() );
+
+## Sets a nodes [Node.process_mode] to [Node.PROCESS_MODE_INHERIT] or [Node.PROCESS_MODE_DISABLED].[br]
+## [br]
+## node: [Node] - The affected node.[br]
+## enabled: [bool] - If true, set to enabled/inherit. Else set to disable.[br]
+## blacklist: [PackedStringArray] - Specific properties to be ignored. By default this included the script and all "resource_*" properties.
+static func node_set_enabled( node: Node, enabled: bool, is_deffered: bool = true ) -> void:
+	
+	var mode: Node.ProcessMode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED;
+	if ( is_deffered ):
+		node.set_deferred( &"process_mode", mode );
+	else:
+		node.process_mode = mode;
+
+#endregion Node Processing
 
 #region Math
 
@@ -161,6 +186,7 @@ const _splashes: PackedStringArray = [
 	"infinitely thin with infinite surface area",
 	"statistically unlikely",
 	"Flea market montgomery",
+	"dont be a slubber use a rubber",
 ];
 ## Returns a random splash.
 ## These are usually inside jokes with my wife/friends =3

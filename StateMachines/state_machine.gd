@@ -4,7 +4,7 @@ extends Node;
 class_name StateMachine;
 ## A GDScript based state machine
 ##
-## Root of a node based state machine, can have many [StateGD] children
+## Root of a node based state machine, can have many [State] children
 ## that it manages.
 
 

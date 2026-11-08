@@ -31,5 +31,4 @@ func _validate_property( property: Dictionary ) -> void:
 		"z_index",
 	];
 	
-	if ( DISABLED.has( property[ Property.NAME ] ) ):
-		property[ Property.USAGE ] = PROPERTY_USAGE_NONE;
+	XVIFuncs.property_disable_by_list( DISABLED, property );

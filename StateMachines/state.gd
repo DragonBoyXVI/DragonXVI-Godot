@@ -5,12 +5,12 @@ extends Node;
 class_name State;
 ## A State node based in GDScript
 ##
-## A state template thats compatable with a [GDStateMachine] node.
+## A state template thats compatable with a [StateMachine] node.
 
 
-## Used to tell the parent [GDStateMachine] to change states.
+## Used to tell the parent [StateMachine] to change states.
 signal state_change_requested( state: StringName );
-## Used to tell the parent [GDStateMachine] to change states.
+## Used to tell the parent [StateMachine] to change states.
 func emit_state_change_request( state: StringName ) -> void:
 	state_change_requested.emit( state );
 
