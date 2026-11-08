@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://yphy70in3m2u"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_pcdan"]
+
+[resource]
+script = ExtResource("1_pcdan")
+pronoun_name = "It/Its"
+nominative = "it"
+accusaive = "it"
+pronominal_possessive = "its"
+predicative_possessive = "its"
+reflexive_pronoun = "itself"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://blx75jgwwjul1"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_fnccl"]
+
+[resource]
+script = ExtResource("1_fnccl")
+pronoun_name = "They/Them/Theirs"
+nominative = "they"
+accusaive = "them"
+pronominal_possessive = "theirs"
+predicative_possessive = "theirs"
+reflexive_pronoun = "themself"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"

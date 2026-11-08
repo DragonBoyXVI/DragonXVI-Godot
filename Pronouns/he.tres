@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://ctulqpd5hpc6d"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_0jhfp"]
+
+[resource]
+script = ExtResource("1_0jhfp")
+pronoun_name = "He/Him/His"
+nominative = "he"
+accusaive = "him"
+pronominal_possessive = "him"
+predicative_possessive = "his"
+reflexive_pronoun = "himself"
+vocacative = "sir"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"

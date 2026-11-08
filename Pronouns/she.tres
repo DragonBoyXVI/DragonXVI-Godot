@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://cvue325mh5l7j"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_5ji6g"]
+
+[resource]
+script = ExtResource("1_5ji6g")
+pronoun_name = "She/Her/Hers"
+nominative = "she"
+accusaive = "her"
+pronominal_possessive = "hers"
+predicative_possessive = "hers"
+reflexive_pronoun = "herself"
+vocacative = "ma'am"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"

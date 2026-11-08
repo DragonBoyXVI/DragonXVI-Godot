@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://dg0swdwew136r"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_4vpr0"]
+
+[resource]
+script = ExtResource("1_4vpr0")
+pronoun_name = "Xe/Xem/Xeir"
+nominative = "xe"
+accusaive = "xem"
+pronominal_possessive = "xeir"
+predicative_possessive = "xeirs"
+reflexive_pronoun = "xemself"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"

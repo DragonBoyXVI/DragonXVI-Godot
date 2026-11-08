@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Pronoun" format=3 uid="uid://dpapcxmwt4jk"]
+
+[ext_resource type="Script" uid="uid://dr5dmdsmwtqrp" path="res://XVI Template/Pronouns/pronoun.gd" id="1_feorh"]
+
+[resource]
+script = ExtResource("1_feorh")
+pronoun_name = "Fae/Faer"
+nominative = "fae"
+accusaive = "faer"
+pronominal_possessive = "faer"
+predicative_possessive = "faers"
+reflexive_pronoun = "faerself"
+metadata/_custom_type_script = "uid://dr5dmdsmwtqrp"
