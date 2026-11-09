@@ -67,7 +67,7 @@ static func control_focus_and_snap( control: Control ) -> void:
 ## [br]
 ## node: [Node] - The affected node.[br]
 ## enabled: [bool] - If true, set to enabled/inherit. Else set to disable.[br]
-## blacklist: [PackedStringArray] - Specific properties to be ignored. By default this included the script and all "resource_*" properties.
+## is_deffered: [Bool] - if true, deffers the call. True by default to prevent physics fuckups.
 static func node_set_enabled( node: Node, enabled: bool, is_deffered: bool = true ) -> void:
 	
 	var mode: Node.ProcessMode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED;
@@ -128,7 +128,7 @@ static func resource_to_json( resource: Resource, include_metadata: bool = false
 			continue;
 		json_dict[ property_name ] = prop_value;
 	
-	return JSON.stringify( json_dict, "\t" );
+	return JSON.stringify( json_dict );
 
 ## Takes a [JSON] string and fills out the provided [Resource].[br]
 ## This doesnt check for values defined in the json not existing in the resource,
@@ -187,6 +187,7 @@ const _splashes: PackedStringArray = [
 	"statistically unlikely",
 	"Flea market montgomery",
 	"dont be a slubber use a rubber",
+	"i jerk off to sorting algorithms and cnc",
 ];
 ## Returns a random splash.
 ## These are usually inside jokes with my wife/friends =3
