@@ -12,6 +12,8 @@ func _init() -> void:
 	if ( Engine.is_editor_hint() ):
 		pass;
 	
+	offset_transform_enabled = true;
+	
 	focus_entered.connect( _on_focus_entered );
 	focus_exited.connect( _on_focus_exited );
 	button_up.connect( _on_button_up );
