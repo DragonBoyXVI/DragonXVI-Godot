@@ -45,7 +45,10 @@ static func property_disable_by_list( disable_list: PackedStringArray, property:
 
 ## Sets ALL node processes to enabled or disabled, dependig on whats given to
 ## the "enabled" argument.
-## By default, this will disable all processes.
+## By default, this will disable all processes.[br]
+## [br]
+## I recommend only using this to disable tool nodes (see my other nodes for examples) as turning on
+## processes that arent needed can cause wasteful overhead.
 static func set_node_processes( node: Node, enabled: bool = false ) -> void:
 	
 	node.set_process( enabled );
