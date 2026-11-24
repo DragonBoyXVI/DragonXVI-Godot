@@ -27,6 +27,10 @@ signal animation_finished( screen_hidden: bool );
 		update_configuration_warnings();
 
 
+func _init() -> void:
+	
+	mouse_filter = Control.MOUSE_FILTER_IGNORE;
+
 func _ready() -> void:
 	
 	if ( Engine.is_editor_hint() ):
@@ -38,6 +42,13 @@ func _ready() -> void:
 			_animation_player.owner = self;
 		
 		return;
+
+func _validate_property( property: Dictionary ) -> void:
+	const DISABLED := [
+		"mouse_filter"
+	];
+	
+	XVIFuncs.property_disable_by_list( DISABLED, property );
 
 func _notification( what: int ) -> void:
 	if ( what == NOTIFICATION_EDITOR_POST_SAVE ):

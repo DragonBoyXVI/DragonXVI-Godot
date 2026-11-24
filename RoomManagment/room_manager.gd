@@ -25,6 +25,13 @@ func _ready() -> void:
 		XVIFuncs.set_node_processes( self, false );
 		return;
 
+func _validate_property( property: Dictionary ) -> void:
+	const DISABLED := [
+		"mouse_filter",
+	];
+	
+	XVIFuncs.property_disable_by_list( DISABLED, property );
+
 
 ## Changes the current room to the one at the file path.
 func change_room( room_path: String ) -> void:
