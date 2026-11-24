@@ -50,7 +50,7 @@ func change_room_to_scene( room_scene: PackedScene ) -> void:
 		_current_room.queue_free();
 	_current_room = room_scene.instantiate();
 	if ( _is_room_paused ):
-		_current_room.pause.call_deferred();
+		XVIFuncs.node_set_enabled( _current_room, false, true );
 	add_child( _current_room );
 	
 	room_changed.emit( _current_room );
@@ -60,10 +60,10 @@ func pause_rooms() -> void:
 	
 	_is_room_paused = true;
 	if ( _current_room ):
-		XVIFuncs.node_set_enabled( _current_room, false, true )
+		XVIFuncs.node_set_enabled( _current_room, false, true );
 
 func unpause_rooms() -> void:
 	
 	_is_room_paused = false;
 	if ( _current_room ):
-		XVIFuncs.node_set_enabled( _current_room, true, true )
+		XVIFuncs.node_set_enabled( _current_room, true, true );
